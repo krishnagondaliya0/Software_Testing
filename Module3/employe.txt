@@ -1,0 +1,62 @@
+//CREATE DATABASE databasenm;
+CREATE DATABASE employee
+
+2. create table
+CREATE TABLE employee_details(EMPNO INT PRIMARY KEY ,FIRST_NAME varchar(255),LAST_NAME varchar(255),DESIGNATION varchar(255),HIREDATE varchar(20),SALARY INTEGER(20),COMM INTEGER(20),DEPTNO INTEGER(20)); 
+
+COlUM INSERT
+INSERT INTO employee_details(EMPNO,FIRST_NAME,LAST_NAME,DESIGNATION,HIREDATE,SALARY,COMM,DEPTNO) VALUES('1001','STEFAN','SALVATORE','BUSSINESS_ANALYST','17-NOV-97','50000','-','40'); 
+INSERT INTO employee_details(EMPNO,FIRST_NAME,LAST_NAME,DESIGNATION,HIREDATE,SALARY,COMM,DEPTNO) VALUES('1002','DIANA','LORRENCE','TECHNIAL ARCHITECT','01-MAY-00','70000','-','10'); 
+INSERT INTO employee_details(EMPNO,FIRST_NAME,LAST_NAME,DESIGNATION,HIREDATE,SALARY,COMM,DEPTNO)  VALUES('1003','JAMES','MADINSAON','MANAGER','19-JUN-88','80400','-','40'); 
+INSERT INTO employee_details(EMPNO,FIRST_NAME,LAST_NAME,DESIGNATION,HIREDATE,SALARY,COMM,DEPTNO)  VALUES('1004','JAMES','NICE','HR_ANALYST','02-JUN-03','47000','-','30'); 
+INSERT INTO employee_details(EMPNO,FIRST_NAME,LAST_NAME,DESIGNATION,HIREDATE,SALARY,COMM,DEPTNO)  VALUES('1005','LUCY','GELLLER','HR_ASSOCIATE','13-JUN-08','35000','200','30'); 
+INSERT INTO employee_details(EMPNO,FIRST_NAME,LAST_NAME,DESIGNATION,HIREDATE,SALARY,COMM,DEPTNO)  VALUES('1006','ISAAC','STEFAN','TRAINE','13-JUN-08','20000','-','40'); 
+INSERT INTO employee_details(EMPNO,FIRST_NAME,LAST_NAME,DESIGNATION,HIREDATE,SALARY,COMM,DEPTNO)  VALUES('1007','JOHN','SMITH','CLERK','17-DEC-05','12000','-','10'); 
+INSERT INTO employee_details(EMPNO,FIRST_NAME,LAST_NAME,DESIGNATION,HIREDATE,SALARY,COMM,DEPTNO)  VALUES('1008','NANCY','GILLBERT','SALESMAN','20-FEB-81','18000','300','10'); 
+
+
+
+
+1)Display FirstName According to Ascending order
+
+ANS------select * from employee_details order by FIRST_NAME asc; -----
+
+2)Display User Detail According to Lower to Higher Salary
+
+ANS-----select * from employee_details order by SALARY asc;------
+
+3) Display Firstname Whose Firstname Starts with J.
+
+ANS------ SELECT * FROM employee_details WHERE FIRST_NAME LIKE 'J%'; -----
+
+4) Display All Employee Whose Designation is CLERK
+
+ANS----- SELECT * FROM employee_details WHERE DESIGNATION IN ('CLERK'); ----
+
+5)Remove Records which is belong from HR ANALYST
+
+Ans--------delete from employee_details where DESIGNATION = 'HR_ANALYST'; 
+
+
+6).Display User Detail Whose Department No. is 40
+Ans-----SELECT * FROM employee_details WHERE DEPTNO LIKE '%40'; ---
+
+
+
+7. Display Max salary from Table
+
+Ans---------SELECT MIN(SALARY) FROM employee_details; ------
+
+
+8. Display Minimum Salary from Table
+
+Ans-------SELECT MAX(SALARY) FROM employee_details; 
+
+9. Display Total Salary of Employee
+
+Ans-------SELECT SUM(SALARY) FROM employee_details; 
+
+10. Display Second Highest Salary from Table
+
+Ans------SELECT MAX(SALARY) FROM employee_details WHERE SALARY < (SELECT MAX(SALARY) FROM employee_details); -----
+   
